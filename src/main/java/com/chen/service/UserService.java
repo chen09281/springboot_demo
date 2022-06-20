@@ -11,11 +11,11 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    @Transactional
+/*    @Transactional
     public void test(){
         userMapper.insertOne();
 //        throw new NullPointerException();
-    }
+    }*/
 
     public String test1(){
         return "chen";
