@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class UserService {
+public class UserService { // userService
     @Autowired
     private UserMapper userMapper;
 
