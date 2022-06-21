@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 public class MyApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class);
-        System.out.println(applicationContext.getBean(OrderService.class));
+        UserService bean =  applicationContext.getBean(UserService.class);
+        bean.test();
+
     }
 }

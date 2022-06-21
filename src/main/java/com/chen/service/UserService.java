@@ -1,23 +1,17 @@
 package com.chen.service;
 
-import com.chen.mapper.UserMapper;
-import jdk.jfr.TransitionFrom;
+import com.chen.properties.MyProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
 @Component
-public class UserService { // userService
+public class UserService {
+
     @Autowired
-    private UserMapper userMapper;
+    private MyProperties myProperties;
 
-/*    @Transactional
+
     public void test(){
-        userMapper.insertOne();
-//        throw new NullPointerException();
-    }*/
-
-    public String test1(){
-        return "chen";
+        System.out.println(myProperties.getPassword());
     }
 }

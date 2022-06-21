@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "chen",
+      "type": "com.chen.properties.MyProperties",
+      "sourceType": "com.chen.properties.MyProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "chen.password",
+      "type": "java.lang.String",
+      "sourceType": "com.chen.properties.MyProperties"
+    }
+  ],
+  "hints": []
+}

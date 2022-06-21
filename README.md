@@ -9,6 +9,9 @@
 | @ConditionalOnSingleCandidate | 只能有单个的 | 类型，名称 |
 | @ConditionalOnClass | 判断里面有这个类，那么就生效 | 类型，名称 |
 | @ConditionalMissClass | 判断里面是否缺少某个类 | 名字 |
+| @ConditionalOnExpression | 判断表达式 | 函数 |
+| @ConditionalOnJAVA | 只有对应的java版本才能使用 | 类型 |
+| @ConditionalOnWebApplication | 判断是否为web应用 |  |
 ### 使用案例
 
 #### @ConditionalOnBean
@@ -74,6 +77,32 @@ public class AppConfig {
 
     @Bean
     @ConditionalOnMissingClass(value = "com.chen.service.UserService")
+    public OrderService orderService(){
+        return new OrderService();
+    }
+}
+```
+
+#### @ConditionalOnExpression
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    @ConditionalOnExpression(value = "${test.condition} == true")
+    public OrderService orderService(){
+        return new OrderService();
+    }
+}
+```
+
+#### @ConditionalOnJAVA
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    @ConditionalOnJava(value = JavaVersion.SEVENTEEN)
     public OrderService orderService(){
         return new OrderService();
     }
